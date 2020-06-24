@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,33 +6,8 @@ import { interval, Subscription } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'timerproject';
-  sub: any;
-  mySubscription: Subscription
 
-
-  todaydate;
-  componentproperty;
-  emailid;
-  formdata;
-  countDownDate1: any;
-
-
-  ngOnInit() {
-
-
-    this.formdata = new FormGroup({
-      date: new FormControl(""),
-      month: new FormControl(""),
-      year: new FormControl(""),
-      hours: new FormControl(""),
-      min:new FormControl(""),
-      sec:new FormControl(""),
-    });
-
-  }
   countDownDate :any;
-
   now="";
   distance="";
   days="";
