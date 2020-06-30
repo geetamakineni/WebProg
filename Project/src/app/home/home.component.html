@@ -1,0 +1,21 @@
+<div class="parent-container">
+  <div class="child-container">
+    <h2 >Welcome To Weather Forecast by UMKC</h2>
+  <br><br>
+    <div>
+      <div (click)="getWeather()" class="btn btn-primary">Kansas City Weather</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 center weather-overview bg-text" *ngIf="weatherData">
+        <h3>Current Forecast</h3>
+        <p>City Name : {{this.weatherData.name}}</p>
+        <p>Country : {{this.weatherData.sys.country}}</p>
+        <p>Weather Description: {{this.weatherData.weather[0].description}}</p>
+        <p>Temperature : {{((this.weatherData.main.temp-273.15)*1.8)+32 | number : '1.2-2'}}F</p>
+        <p>Wind : {{this.weatherData.wind.speed}}mph</p>
+        <p>Pressure : {{this.weatherData.main.pressure}}hpa</p>
+        <p>Humidity : {{this.weatherData.main.humidity}}%</p>
+      </div>
+    </div>
+    </div>
+</div>
