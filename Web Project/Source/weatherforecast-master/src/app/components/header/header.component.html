@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default background">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="assets/logo.jpg" alt="Logo" width="55" height="50">
+      <a routerLinkActive="active" routerLink="/home" class="navbar-brand background">UMKC Forecast</a>
+    </div>
+
+    <div class="collapse navbar-collapse tx">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/weather-forecast">Weather Forecast</a></li>
+        <li><a routerLink="/search-recipe">Restaurants Finder</a></li>
+        <li><a routerLink="/disaster">Disasters</a></li>
+        <li><a (click)="authService.SignOut()">Logout</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
