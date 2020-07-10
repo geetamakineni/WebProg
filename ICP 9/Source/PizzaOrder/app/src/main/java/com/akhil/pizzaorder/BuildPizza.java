@@ -14,12 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dhairya.pizzaorder.R;
-
 public class BuildPizza extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String MAIN_ACTIVITY_TAG = "MainActivity";
-    final int PIZZA_PRICE = 8;
-    final int OLIVES_PRICE = 2;
+    final int PIZZA_PRICE = 10;
+    final int MUSHROOMS_PRICE = 2;
     final int ONIONS_PRICE = 3;
     final int SPICES_PRICE = 4;
     int quantity = 0;
@@ -43,8 +41,8 @@ public class BuildPizza extends AppCompatActivity implements AdapterView.OnItemS
         final String userInputName = userInputNameView.getText().toString();
 
 
-        CheckBox Olives = (CheckBox) findViewById(R.id.Olives_checked);
-        boolean hasOlives = Olives.isChecked();
+        CheckBox Mushrooms = (CheckBox) findViewById(R.id.Mushrooms_checked);
+        boolean hasMushrooms = Mushrooms.isChecked();
 
 
         CheckBox Onions = (CheckBox) findViewById(R.id.Onions_checked);
@@ -53,14 +51,12 @@ public class BuildPizza extends AppCompatActivity implements AdapterView.OnItemS
         CheckBox spices = (CheckBox)findViewById(R.id.mixed_spices);
         boolean has_spices = spices.isChecked();
 
-
-
         // calculate and store the total price
-        float totalPrice = calculatePrice(hasOnions, hasOlives,has_spices);
+        float totalPrice = calculatePrice(hasOnions, hasMushrooms,has_spices);
 
         // create and store the order summary
-        final String orderSummaryMessage = createOrderSummary(userInputName, hasOlives,hasOnions,has_spices, totalPrice);
-        Intent intent = new Intent(BuildPizza.this, Order.class);
+        final String orderSummaryMessage = createOrderSummary(userInputName, hasMushrooms,hasOnions,has_spices, totalPrice);
+        Intent intent = new Intent(BuildPizza.this,Order.class);
         intent.putExtra("NAME",userInputName);
         intent.putExtra("SUMMARY",orderSummaryMessage);
         startActivity(intent);
@@ -71,14 +67,14 @@ public class BuildPizza extends AppCompatActivity implements AdapterView.OnItemS
         return bool ? (getString(R.string.yes)) : (getString(R.string.no));
     }
 
-    private String createOrderSummary(String userInputName, boolean hasOlives,boolean hasSpices, boolean hasOnions, float price) {
-        String orderSummaryMessage ="Order By: " + userInputName + "\n\n" + "Your Order Got Placed, You Have Selected these items \n\n"+
-                getString(R.string.order_summary_Olives,boolToString(hasOlives)) + "\n" +
+    private String createOrderSummary(String userInputName, boolean hasMushrooms,boolean hasSpices, boolean hasOnions, float price) {
+        String orderSummaryMessage ="Order By: " + userInputName + "\n\n" + "Thank You for the Order, You Have Selected these items \n\n"+
+                getString(R.string.order_summary_Mushrooms,boolToString(hasMushrooms)) + "\n" +
                 getString(R.string.order_summary_Onions, boolToString(hasOnions)) + "\n" +
                 getString(R.string.order_summary_spices, boolToString(hasSpices)) + "\n\n" +
                 getString(R.string.order_summary_quantity, quantity) + "\n" +
-                getString(R.string.order_summary_total_price, calculatePrice(hasOlives,hasOnions,hasSpices)) + "\n" +
-                getString(R.string.thank_you)+"\n\n"+"Note: Pizza= $10, Mushrooms = $2, Onions = $3, mixed spices= $4";
+                getString(R.string.order_summary_total_price, calculatePrice(hasMushrooms,hasOnions,hasSpices)) + "\n" +
+                getString(R.string.thank_you)+"\n\n"+"Note: Pizza= $10, Mushrooms = $2, Onions = $3, Pineapple = $2, mixed spices= $4";
         return orderSummaryMessage;
     }
 
@@ -87,15 +83,15 @@ public class BuildPizza extends AppCompatActivity implements AdapterView.OnItemS
      *
      * @return total Price
      */
-    private float calculatePrice(boolean hasOlives, boolean hasOnions, boolean hasSpices) {
+    private float calculatePrice(boolean hasMushrooms, boolean hasOnions, boolean hasSpices) {
         int basePrice = PIZZA_PRICE;
-        if (hasOlives) {
-            basePrice += OLIVES_PRICE;
+        if (hasMushrooms) {
+            basePrice += MUSHROOMS_PRICE;
         }
         if (hasOnions) {
             basePrice += ONIONS_PRICE;
         }
-       if(hasSpices){
+        if(hasSpices){
             basePrice+=SPICES_PRICE;
         }
         return quantity * basePrice;
