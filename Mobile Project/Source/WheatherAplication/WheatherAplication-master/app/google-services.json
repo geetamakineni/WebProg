@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "982492402229",
+    "firebase_url": "https://wheatheraplication.firebaseio.com",
+    "project_id": "wheatheraplication",
+    "storage_bucket": "wheatheraplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982492402229:android:9d2a440a288bacd44c977c",
+        "android_client_info": {
+          "package_name": "com.anioncode.wheatheraplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982492402229-c6j1crsvome6820g88mnrfot1d8a1oto.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anioncode.wheatheraplication",
+            "certificate_hash": "3c85a5e9b8ade7e5fd4436d8c6346ba9f533a5bb"
+          }
+        },
+        {
+          "client_id": "982492402229-5t06mcjq7i168fgucep6l77b0f64kisb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5iNHnDLLQQR6Ll0GB54Li67xLTaFMgw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982492402229-5t06mcjq7i168fgucep6l77b0f64kisb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="16dp"
+    android:background="@drawable/bg"
+
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:text="Weather Forecast App"
+        android:textColor="#FFEB3B"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <GridLayout
+        android:id="@+id/lyt"
+        android:layout_width="335dp"
+        android:layout_height="369dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="84dp"
+        android:columnCount="2"
+        android:rowCount="1">
+
+
+        <Button
+            android:id="@+id/main_btn_record"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:layout_margin="10sp"
+            android:background="@drawable/weather"
+            android:onClick="weather"
+            android:padding="50sp" />
+
+        <Button
+            android:id="@+id/profile"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:layout_margin="10sp"
+            android:background="@drawable/prof2"
+            android:onClick="profile"
+            android:padding="50sp" />
+
+        <Button
+            android:id="@+id/editprofile"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:layout_margin="10sp"
+            android:background="@drawable/edit"
+            android:onClick="editprofile"
+            android:padding="50sp" />
+
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="134dp"
+            android:layout_height="133dp"
+            android:layout_margin="10sp"
+            android:background="@drawable/logout"
+            android:onClick="logout"
+            android:padding="50sp" />
+
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/main_btn_news"
+        android:layout_width="wrap_content"
+        android:layout_height="172dp"
+        android:layout_below="@+id/lyt"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginBottom="10sp"
+        android:background="@drawable/news"
+        android:onClick="onNewsClick"
+        android:padding="20sp"
+        android:textColor="@color/colorAccent" />
+
+
+</RelativeLayout>
