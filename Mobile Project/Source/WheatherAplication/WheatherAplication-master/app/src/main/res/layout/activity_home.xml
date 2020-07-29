@@ -12,9 +12,10 @@
 
     tools:context=".HomeActivity">
 
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="328dp"
+        android:layout_width="281dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
         android:text="Weather Forecast App"
@@ -25,6 +26,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="51dp"
+        android:layout_height="57dp"
+        android:layout_alignLeft="@id/textView"
+        android:layout_marginLeft="300dp"
+        android:background="@drawable/logout"
+        android:onClick="logout"
+        android:padding="50sp" />
 
     <GridLayout
         android:id="@+id/lyt"
@@ -55,21 +66,21 @@
             android:padding="50sp" />
 
         <Button
-            android:id="@+id/editprofile"
+            android:id="@+id/maps"
             android:layout_width="150sp"
             android:layout_height="150sp"
             android:layout_margin="10sp"
-            android:background="@drawable/edit"
-            android:onClick="editprofile"
+            android:background="@drawable/maps"
+            android:onClick="maps"
             android:padding="50sp" />
 
 
         <Button
-            android:id="@+id/logout"
+            android:id="@+id/editprofile"
             android:layout_width="134dp"
             android:layout_height="133dp"
             android:layout_margin="10sp"
-            android:background="@drawable/logout"
+            android:background="@drawable/edit"
             android:onClick="logout"
             android:padding="50sp" />
 

@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.anioncode.wheatheraplication.Login" />
-
-
         <activity android:name="com.anioncode.wheatheraplication.Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +23,16 @@
             </intent-filter>
         </activity>
         <activity android:name="com.anioncode.wheatheraplication.HomeActivity" />
+        <activity android:name="com.anioncode.wheatheraplication.MapsActivity"/>
         <activity android:name="com.anioncode.wheatheraplication.MainActivity" />
         <activity android:name="com.anioncode.wheatheraplication.EditProfile" />
         <activity android:name="com.anioncode.wheatheraplication.WeatherActivity" />
         <activity android:name="com.anioncode.wheatheraplication.NewsActivity" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
-
 </manifest>

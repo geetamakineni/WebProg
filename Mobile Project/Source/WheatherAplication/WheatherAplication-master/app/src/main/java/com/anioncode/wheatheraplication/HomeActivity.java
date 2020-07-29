@@ -29,6 +29,11 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(redirect);
     }
 
+    public void maps(View v) {
+        //This code redirects to the news activity.
+        Intent redirect = new Intent(HomeActivity.this, MapsActivity.class);
+        startActivity(redirect);
+    }
     public void editprofile(View v) {
         //This code redirects to the news activity.
         Intent redirect = new Intent(HomeActivity.this, EditProfile.class);
